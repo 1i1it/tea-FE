@@ -1,0 +1,27 @@
+    <script type="text/ng-template" id="tea_store.html">
+      <div class="row">
+        <div ng-repeat="tea in teas">
+          <div class="col-sm-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">{{tea.name}}
+              </div>
+              <a href="#/one_tea?_id={{tea._id}}">
+                <div class="panel-body"><img src={{tea.image}} class="img-responsive" width="500px" height="300px" alt="Image" style='height:300px; width: 500px;'></div></a>
+                <div class="panel-footer">Price: {{tea.price}}
+                </div>
+                <div class="panel-footer">Category: {{tea.category}}
+                </div>
+                <div class="panel-footer">Description: {{tea.description}}
+                </div>
+                <div ng-show="!cart.isInCart(tea._id)" class = "cart_button">
+                  <button ng-click="cart.addItem(tea._id)" class="btn btn-primary" >Add to cart</button>
+                </div>
+                <div  ng-show="cart.isInCart(tea._id)" class = "cart_button" >
+                  This item is in your cart. 
+                  <button ng-click="cart.removeItem(tea._id)" class="btn btn-primary">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>

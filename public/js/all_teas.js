@@ -10,7 +10,7 @@ app.controller('teasCtrl', function($scope, $http, $route, $cookieStore, Cart) {
 	}
 
 	$scope.showText= function() {
-		$http.get("http://localhost:9797/show_teas?name="  + $scope.value)
+		$http.get(root_url + "show_teas?name="  + $scope.value)
 		.then(function (response) {
 			$scope.teas = response.data.teas;
 		});
