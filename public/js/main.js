@@ -1,6 +1,8 @@
   
 var app = angular.module('myApp', ["ngRoute","ngCookies"]);
 
+var root_url = "http://localhost:9797/";
+
 app.config(function($routeProvider) {
 	$routeProvider
 	.when("/", {

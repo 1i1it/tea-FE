@@ -3,7 +3,7 @@ app.controller('teasCtrl', function($scope, $http, $route, $cookieStore, Cart) {
 
 	$scope.cart = Cart;
 	$scope.showFiltered = function() {
-		$http.get("http://localhost:9797/show_teas?" + $scope.filterType + "=" + $scope.filterVal)
+		$http.get(root_url + "show_teas?" + $scope.filterType + "=" + $scope.filterVal)
 		.then(function (response) {
 			$scope.teas = response.data.teas;
 		});
@@ -24,7 +24,7 @@ app.controller('teasCtrl', function($scope, $http, $route, $cookieStore, Cart) {
 		$scope.value = $route.current.params.value;
 		$scope.showText();
 	} else {
-		$http.get("http://localhost:9797/expensive_teas")
+		$http.get(root_url + "expensive_teas")
 		.then(function (response) {
 			$scope.teas = response.data.teas;
 		});
