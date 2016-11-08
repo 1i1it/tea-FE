@@ -1,5 +1,4 @@
 app.controller('teasCtrl', function($scope, $http, $route, $cookieStore, Cart) {
-	window.teasCtrl = $scope;
 
 	$scope.cart = Cart;
 	$scope.showFiltered = function() {
